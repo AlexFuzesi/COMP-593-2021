@@ -1,0 +1,76 @@
+from unicodedata import name
+
+
+def main():
+    Student_Name = {
+        'Name': 'Alex Fuzesi'
+    }
+
+    Student_id = {
+        'Student id': 10241524,
+    }
+    
+    pizza_toppings = {
+        'toppings': [
+            'pepperoni',
+            'sausage',
+            'bacon'
+        ]
+    }
+   
+   
+    Movies_info = {
+        'Movies': [
+            'Godzilla Final War',
+            'Gundam 00'
+        ],
+        'Genre': [
+            'Action',
+            'Mecha'
+        ],
+    }
+
+
+    new_toppings = ('onions','Cheese', 'Peppers')
+    add_new_topping(pizza_toppings, new_toppings)
+    pizza_toppings['toppings'].append(new_toppings)
+    
+    print_name_id(Student_Name, Student_id)
+    print_pizza_toppings(pizza_toppings)
+    print_Movies_genre(Movies_info)
+
+
+
+   
+   
+   
+    pass
+
+def add_new_topping(toppings):
+    for p in toppings:
+        toppings['toppings'].append(p)
+
+def print_name_id(name_id):
+
+    sentince = "Hi" + name_id['Name'] + "and my student id is" + name_id['Student id']
+
+    print(sentince)
+
+def print_pizza_toppings(pizzatoppings):
+
+    sentince2 = "My ideal pizza has" + pizzatoppings['toppings']
+
+    print(sentince2)
+
+def print_Movies_genre(movies_genre):
+
+    sentince3 = "I like to watch" + movies_genre['genra'] + "movies"
+
+    print(sentince3)
+
+def print_Movies_title(movies_title):
+
+    sentince4 = "Some of my favourites are" + movies_title['Movies'] + "!"
+
+    print(sentince4)
+main()

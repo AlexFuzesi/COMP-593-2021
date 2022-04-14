@@ -1,0 +1,103 @@
+from tkinter import *
+from tkinter import ttk
+from pokeapi import get_pokemon_info
+
+def main():
+
+    root = Tk()
+    root.title("Pokemon Info Viewer")
+    root.iconbitmap('pokeball.icon')
+
+
+    # Creat the frames 
+    frm_input = ttk.Frame(root)
+    frm_input.grid(row=1, column=1, columnspan=2)
+
+    frm_stats = ttk.LabelFrame(root, text="Stats")
+    frm_stats.grid(row=2, column=2, padx=10, pady=10, sticky=N)
+
+    frm_info = ttk.LabelFrame(root, text="Info")
+    frm_info.grid(row=2, column=1, padx=10, pady=10, sticky=N)
+
+    # populate the users input frame 
+    lbl_name = ttk.Lable(frm_input, text='Pokemon Name:')
+    lbl_name.grid(row=0, column=0, padx=10, pady=10)
+
+    ent_name = ttk.Entry(frm_input)
+    ent_name.grid(row=0, column=1, pady=10)
+
+    def btn_get_info_click():
+        name = ent_name.get()
+        poke_dict = get_pokemon_info(name)
+        if poke_dict:
+            lbl_height_val['text'] = str(poke_dict['height']) + ' dm'
+            lbl_Weight_val['text'] = str(poke_dict['weight']) + ' hq'
+            types_list  = (t['type']['name']for t in poke_dict['types'])
+            lbl_type_val['text'] = ', '.join(types_list)
+            prg_hp['value'] = poke_dict['stats'][0]['base_stat']
+            prg_attack['value'] = poke_dict['stats'][1]['base_stat']
+            prg_defense['value'] = poke_dict['stats'][2]['base_stat']
+            prg_sa['value'] = poke_dict['stats'][3]['base_stat']
+            prg_sd['value'] = poke_dict['stats'][4]['base_stat']
+            prg_speed['value'] = poke_dict['stats'][5]['base_stat']
+
+    btn_get_info = ttk.Button(frm_input, text='Get Info', command=btn_get_info_click)
+    btn_get_info.grid(row=0, column=2, padx=10, pady=10)
+
+    #popilaste the stats bar 
+
+    lbl_hp = ttk.Lable(frm_stats, text='Hp:')
+    lbl_hp.grid(row=0, column=0, padx=10, pady=10, sticky=E)
+    prg_hp = ttk.Progressbar(frm_stats, length=200, maximun=255.0 )
+    prg_hp.grid(row=0, column=1, padx=(0,10), pady=10)
+
+    lbl_attack = ttk.Lable(frm_stats, text='Attack:')
+    lbl_attack.grid(row=0, column=0, padx=10, sticky=E)
+    prg_attack = ttk.Progressbar(frm_stats, length=200, maximun=255.0 )
+    prg_attack.grid(row=0, column=1, padx=(0,10))
+
+    lbl_defense = ttk.Lable(frm_stats, text='Defense:')
+    lbl_defense.grid(row=0, column=0, padx=10, pady=10, sticky=E)
+    prg_defense = ttk.Progressbar(frm_stats, length=200, maximun=255.0 )
+    prg_defense.grid(row=0, column=1, padx=(0,10), pady=10)
+
+    lbl_sa = ttk.Lable(frm_stats, text='Special Attack:')
+    lbl_sa.grid(row=0, column=0, padx=10, sticky=E)
+    prg_sa = ttk.Progressbar(frm_stats, length=200, maximun=255.0 )
+    prg_sa.grid(row=0, column=1, padx=(0,10))
+
+    lbl_sd = ttk.Lable(frm_stats, text='Special Defense:')
+    lbl_sd.grid(row=0, column=0, padx=10, pady=10, sticky=E)
+    prg_sd = ttk.Progressbar(frm_stats, length=200, maximun=255.0 )
+    prg_sd.grid(row=0, column=1, padx=(0,10), pady=10)
+
+    lbl_speed = ttk.Lable(frm_stats, text='Speed:')
+    lbl_speed.grid(row=0, column=0, padx=10, sticky=E)
+    prg_speed = ttk.Progressbar(frm_stats, length=200, maximun=255.0 )
+    prg_speed.grid(row=0, column=1, padx=(0,10))
+
+    # Populate the info frame
+    lbl_height = ttk.Label(frm_info, text='Height:')
+    lbl_height.grid(row=100, column=100, padx=10, pady=(10,0))
+    lbl_height_val = ttk.Label(frm_info, text='TBD')
+    lbl_height_val.grid(row=100, column=200, padx=10, pady=(10,0))
+
+    lbl_Weight = ttk.Label(frm_info, text='Weight:')
+    lbl_Weight.grid(row=100, column=100, padx=10, pady=10)
+    lbl_Weight_val = ttk.Label(frm_info, text='TBD')
+    lbl_Weight_val.grid(row=100, column=200, padx=10, pady=10)
+
+    lbl_Type = ttk.Label(frm_info, text='Type:')
+    lbl_Type.grid(row=300, column=100, padx=10, pady=(10,0))
+    lbl_Type_val = ttk.Label(frm_info, text='TBD')
+    lbl_Type_val.grid(row=300, column=200, padx=10, pady=(10,0))
+
+
+
+    
+
+    root.mainloop()
+
+
+
+main()

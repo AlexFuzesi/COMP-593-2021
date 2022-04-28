@@ -1,0 +1,124 @@
+Alex Fuzesi 
+Created date April 18,2022
+id = 10241524
+
+April 18,2022
+- set up vs code 
+-imported the template 
+- read over code
+-started a plan on how to takle the code 
+-That was the end of day 1
+
+April 19,2022
+- finshed def create_image_db(db_path):
+- started working on def image_already_in_db(db_path, image_sha256):
+-That was the end of day 2
+
+April 20,2022
+
+Goals fo the day 
+1. def add_image_to_db(db_path, image_path, image_size, image_sha256):
+2. def print_apod_info(image_url, image_path, image_size, image_sha256):
+
+Finshed/notes
+- worked on and finshed def add_image_to_db(db_path, image_path, image_size, image_sha256): 
+- added the vaules of the img to the data base
+- Also finished def print_apod_info(image_url, image_path, image_size, image_sha256): to print all of the information about the img
+-That was the end of day 3 
+
+April 21, 2022
+
+- took a bit of a break day 
+- did a final and worked on the lasst lab for comp 593
+- learned how to do the set th desk top background 
+- That was the end of day 4
+
+April 22, 2022
+
+Goals for the day 
+1. image_already_in_db(db_path, image_sha256):
+2. def image_already_in_db(db_path, image_sha256):
+
+Finshed/notes
+- worked on def image_already_in_db(db_path, image_sha256): looking back at prev labs to see if I could find some help 
+- was able to fishing def image_already_in_db(db_path, image_sha256): 
+- Using the information we learned yesterday I was able toi finsh the set desktop background
+- That was the end of day 5 
+
+April 23, 2022
+
+Goal for the day 
+1. def get_image_path(image_url, dir_path):
+
+Finshed/notes
+-def get_image_path(image_url, dir_path): 
+today using the lab from thursday to help solve this problem
+- started to map out how I will use my time to complete all of this on time
+- That was the end of day 6 
+
+April 24, 2022
+
+Took another break day
+
+April 25, 2022
+
+Goals for the day 
+
+1. def set_desktop_background_image(image_path, image_dir): 
+
+Finished/notes
+
+-def set_desktop_background_image(image_path, image_dir):
+using the infromation that we got in the last lab i was able to use some of that code and upadte it to make sure we could set the desktop background 
+
+
+That was the end of day 7
+
+
+April 26, 2022
+
+Took a break day Had exam stuff to do wanted to focuse on that 
+
+April 27, 2022
+
+Goals for the day  
+
+1. def save_image_file(image_msg, image_path):
+2. def get_apod_info(date):
+
+Finished/notes
+
+-def save_image_file(image_msg, image_path): from like other programes we have done all semesters getting the info from http request was very easy due to know how to make a jonson dic 
+then using the path url we can use from other parts in the program to get the path set. 
+
+- for def get_apod_info(date):
+using some of the prior knwgdele we i have leard from the last  labs using the pramas methoitd that we used to limit and offset I can use something smiler with some chane in the code to pull date from the apod. 
+
+That was the end of day 8
+
+April 28, 2022 
+
+Goals for the day
+1.  image_url =
+2.  image_sha256 =
+3.  image_size =
+
+Finished/notes for the day 
+- we had a lectuer today of 5 people 
+- where jeremy said that he would only answer our emails becuses we showed up 
+- jeremy also was able to help me complete my goals today of the last three things I needed todo 
+Completed 
+1. image_url = 
+2. image_sha256 =
+3. image_size = 
+
+
+
+
+
+
+
+
+
+
+
